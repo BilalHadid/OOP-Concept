@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningInheritanceConstructor
+{
+    class GrandFather
+    {
+        public GrandFather() { Console.WriteLine("I'm Grand Father"); }
+    }
+    class Father : GrandFather
+    {
+        public Father() { Console.WriteLine("I'm Father"); }
+    }
+    class Son : Father
+    {
+        public Son() { Console.WriteLine("I'm Son"); }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Son obj = new Son();
+        }
+    }
+}
