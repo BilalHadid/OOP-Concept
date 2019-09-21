@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningAggregation
+{
+    class Address
+    {
+        int houseNo;
+        string area;
+
+        public Address(int h, string a)
+        {
+            houseNo = h;
+            area = a;
+        }
+        public void displayAddress()
+        {
+            Console.WriteLine("House # " + houseNo);
+            Console.WriteLine("Area : " + area);
+            Console.WriteLine("--------------------");
+        }
+    }
+    class Person
+    {
+        string name;
+        Address homeAddress;
+
+        public Person(string n, Address h)
+        {
+            name = n;
+            homeAddress = h;
+        }
+
+        public void displayPerson()
+        {
+            Console.WriteLine("Name : " + name);
+            homeAddress.displayAddress();
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Address myAddress = new Address(420, "Lalo Khet 10 number");
+            {
+                Person raza = new Person("Muhammad Raza", myAddress);
+                raza.displayPerson();
+            }
+            myAddress.displayAddress();
+
+        }
+    }
+}
