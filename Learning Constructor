@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningConstructorStudent
+{
+    class Student
+    {
+        int ID;
+        string name;
+        double cgpa;
+
+        public Student()
+        {
+            ID = 123;
+            name = "Basheer";
+            cgpa = 3.5;
+        }
+        public Student(int i, string n, double c)
+        {
+            ID = i;
+            name = n;
+            cgpa = c;
+        }
+        public void display()
+        {
+            Console.WriteLine("ID : " + ID );
+            Console.WriteLine("Name : " + name);
+            Console.WriteLine("CGPA : " + cgpa);
+            Console.WriteLine("****************");
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student papu = new Student();
+            papu.display();
+
+            Console.Write("Enter ID : ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter name : ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter cgpa : ");
+            double cgpa = Convert.ToDouble(Console.ReadLine());
+
+
+
+            Student pricekumari = new Student(id, name, cgpa);
+            pricekumari.display();
+        }
+    }
+}
