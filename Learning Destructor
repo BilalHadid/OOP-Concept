@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningDestructor
+{
+    class Human
+    {
+        int a;
+        public Human()
+        {
+            a = 5;
+        }
+        public void display()
+        {
+            Console.WriteLine("The value of a is " + a);
+        }
+        ~Human()
+        {
+            Console.WriteLine("Human mar gaya");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Human obj = new Human();
+            obj.display();
+        }
+    }
+}
