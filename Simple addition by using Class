@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Simple_AdditionByUsing_Class
+{
+    class Temp
+    {
+        public void add(int x, int y)
+        {
+            Console.WriteLine("The sum is " + (x+y));
+        }
+        public void add(double x, double y)
+        {
+            Console.WriteLine("The sum is " + (x+y));
+        }
+        public void add(double x, double y, double z)
+        {
+            Console.WriteLine("The sum is " + (x+y+z));
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Temp obj = new Temp();
+            obj.add(3,2);
+        }
+    }
+}
