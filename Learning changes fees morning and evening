@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningMorningEveningMasla
+{
+    class Student
+    {
+        string name;
+        int id;
+        Classififcation type;
+
+        public Student(string n, int i, string t)
+        {
+            name = n;
+            id = i;
+            if (t == "Morning")
+                type = new Morning();
+            else
+                type = new Evening();
+        }
+        public void showStduent()
+        {
+            Console.WriteLine("Name : " + name);
+            Console.WriteLine("ID : " + id);
+            type.showShift();
+        }
+        public void changeShift()
+        {
+            if (type.shift == "Morning")
+                type = new Evening();
+            else
+                type = new Morning();
+        }
+    }
+    class Classififcation
+    {
+        protected int fees;
+        public string shift;
+        public Classififcation(string s)
+        {
+            shift = s;
+        }
+        public void showShift()
+        {
+            Console.WriteLine("Fees : " + fees);
+            Console.WriteLine("Shift : " + shift);
+        }
+    }
+    class Morning : Classififcation
+    {
+        public Morning():base("Morning")
+        {
+            fees = 15000;
+        }
+    }
+    class Evening : Classififcation
+    {
+        public Evening():base("Evening")
+        {
+            fees = 20000;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student ali = new Student("Ali", 420, "Evening");
+            ali.showStduent();
+
+            ali.changeShift();
+            ali.showStduent();
+
+            ali.changeShift();
+            ali.showStduent();
+
+        }
+    }
+}
