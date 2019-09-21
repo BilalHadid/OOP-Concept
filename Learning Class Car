@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningClassCarExample
+{
+    class Car
+    {
+        string make;
+        int speed;
+        int model;
+
+        public void set(string ma, int s, int mo)
+        {
+            make = ma;
+            speed = s;
+            model = mo;
+        }
+        public void accelerate()
+        {
+            speed = speed + 5;
+            display();
+        }
+        public void brake()
+        {
+            speed = speed - 5;
+            display();
+        }
+        public void display()
+        {
+            Console.WriteLine("Speed is " + speed);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Car mira = new Car();
+            mira.set("Mira", 25, 2019);
+            mira.display();
+            mira.accelerate();
+            mira.accelerate();
+            mira.brake();
+        }
+    }
+}
