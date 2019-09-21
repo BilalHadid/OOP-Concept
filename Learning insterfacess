@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningInterfaces
+{
+    interface IAnimal
+    {
+        void speak();
+        void eat();
+    }
+    class Cat : IAnimal
+    {
+        public void sleep() { Console.WriteLine("Cat sleeps"); }
+        public void speak() { Console.WriteLine("Cat sleep"); }
+        public void eat() { Console.WriteLine("Cat sleep"); }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IAnimal obj = new IAnimal();
+        }
+    }
+}
