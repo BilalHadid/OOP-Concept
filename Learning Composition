@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningComposition
+{
+    class Arms
+    {
+        public Arms() { Console.WriteLine("Ctor: Arms"); }
+        public void showPart() { Console.WriteLine("Func: Arms"); }
+        ~Arms() { Console.WriteLine("Desc: Arms"); }
+    }
+    class Legs
+    {
+        public Legs() { Console.WriteLine("Ctor: Legs"); }
+        public void showPart() { Console.WriteLine("Func: Legs"); }
+        ~Legs() { Console.WriteLine("Desc: Legs"); }
+    }
+    class Head
+    {
+        public Head() { Console.WriteLine("Ctor: Head"); }
+        public void showPart() { Console.WriteLine("Func: Head"); }
+        ~Head() { Console.WriteLine("Desc: Head"); }
+    }
+    class Ali
+    {
+        Arms a;
+        Legs l;
+        Head h;
+
+        public Ali()
+        {
+            a = new Arms();
+            l = new Legs();
+            h = new Head();
+            Console.WriteLine("Ctor: Ali");
+        }
+        public void showAli()
+        {
+            a.showPart();
+            l.showPart();
+            h.showPart();
+            Console.WriteLine("Func: Ali");
+        }
+        ~Ali()
+        {
+            Console.WriteLine("Desc : Ali");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Ali obj = new Ali();
+            obj.showAli();
+        }
+    }
+}
