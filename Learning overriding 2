@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningOverrding2
+{
+    class drawingObject
+    {
+        public virtual void draw() { Console.WriteLine("Drawing Object"); }
+    }
+    class Line : drawingObject
+    {
+        public override void draw() { Console.WriteLine("Line"); }
+    }
+    class Circle : drawingObject
+    {
+        public override void draw() { Console.WriteLine("Circle"); }
+    }
+    class Square : drawingObject
+    {
+        public override void draw() { Console.WriteLine("Square"); }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            drawingObject[] obj = new drawingObject[4];
+            obj[0] = new drawingObject();
+            obj[1] = new Line();
+            obj[2] = new Circle();
+            obj[3] = new Square();
+
+            foreach (drawingObject item in obj)
+            {
+                item.draw();
+            }
+        }
+    }
+}
