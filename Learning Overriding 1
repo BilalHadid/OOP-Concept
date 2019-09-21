@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningOverriding1
+{
+    class BC
+    {
+        public  void show() { Console.WriteLine("BC"); }
+    }
+    class DC : BC
+    {
+        public  void show() { Console.WriteLine("DC"); }
+    }
+    class TC : DC
+    {
+        public  void show() { Console.WriteLine("TC"); }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            TC obj = new DC();
+            obj.show();
+        }
+    }
+}
