@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LEarningConstant
+{
+    class Temp
+    {
+        const int a = 3;
+       
+        public void display()
+        {
+            Console.WriteLine("a : " + (a+5));
+            Console.WriteLine(a);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Temp obj = new Temp();
+            obj.display();
+        }
+    }
+}
